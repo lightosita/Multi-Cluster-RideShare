@@ -1,5 +1,6 @@
 
 # PodDisruptionBudgets - Multi-Cluster RideShare
+
 # Namespace: rideshare-app
 # Applied to: Both light-rideshare-cluster (us-east-1)
 #             and jibike-rideshare-cluster (us-east-2)
@@ -105,15 +106,3 @@ spec:
     matchLabels:
       app: frontend
 
-# ============================================================
-# Apply to both clusters:
-#
-#   kubectl config use-context arn:aws:eks:us-east-1:...:cluster/light-rideshare-cluster
-#   kubectl apply -f pod-disruption-budgets.yaml
-#
-#   kubectl config use-context partner-primary
-#   kubectl apply -f pod-disruption-budgets.yaml
-#
-# Verify:
-#   kubectl get pdb -n rideshare-app
-# ============================================================
